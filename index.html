@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>赏金女王 · 稳定入口介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: #f2f7f9;
+            color: #1e3a3f;
+            line-height: 1.6;
+            padding: 20px 16px 40px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* 卡片与网格 */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 20px 18px;
+            box-shadow: 0 6px 16px rgba(0, 100, 110, 0.06);
+            transition: transform 0.2s ease;
+            border-left: 4px solid #2f9e9e;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px rgba(0, 100, 110, 0.08);
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #136b6b;
+            margin-bottom: 8px;
+            letter-spacing: 0.3px;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #2b5459;
+        }
+
+        /* hero */
+        .hero {
+            text-align: center;
+            padding: 40px 10px 28px;
+            background: linear-gradient(145deg, #e5f3f0 0%, #d6ece8 100%);
+            border-radius: 36px;
+            margin-bottom: 34px;
+            box-shadow: inset 0 -2px 6px rgba(47, 158, 158, 0.08);
+        }
+
+        .hero-icon {
+            font-size: 2.6rem;
+            display: inline-block;
+            background: #ffffffcc;
+            width: 70px;
+            height: 70px;
+            line-height: 72px;
+            border-radius: 50%;
+            margin-bottom: 14px;
+            box-shadow: 0 4px 12px rgba(0,90,90,0.08);
+            color: #116b6b;
+        }
+
+        .hero h1 {
+            font-size: 1.9rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #0b4f4f;
+            margin-bottom: 12px;
+        }
+
+        .hero .sub {
+            font-size: 1.05rem;
+            color: #216f6f;
+            max-width: 580px;
+            margin: 0 auto 18px;
+            background: rgba(255,255,255,0.5);
+            padding: 8px 20px;
+            border-radius: 60px;
+        }
+
+        .hero .sub a {
+            color: #0d7373;
+            text-decoration: underline;
+            font-weight: 500;
+        }
+
+        /* 优势区 */
+        .section-heading {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #0d5e5e;
+            margin: 36px 0 18px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-heading span {
+            background: #2a9d8f20;
+            padding: 4px 14px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            color: #136b6b;
+        }
+
+        /* 说明区 */
+        .intro-block {
+            background: #ffffffd9;
+            padding: 22px 22px;
+            border-radius: 28px;
+            margin: 20px 0 24px;
+            border: 1px solid #b8d9d6;
+            box-shadow: 0 4px 8px rgba(0,70,70,0.02);
+            font-size: 0.98rem;
+            color: #1e474b;
+        }
+
+        .intro-block strong {
+            color: #0b6b6b;
+        }
+
+        .intro-block a {
+            color: #0b7373;
+            text-decoration: underline;
+            font-weight: 500;
+        }
+
+        /* FAQ 摘要 */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin: 24px 0 28px;
+        }
+
+        .faq-item {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 16px 16px;
+            box-shadow: 0 2px 10px rgba(20, 90, 90, 0.04);
+            border-bottom: 2px solid #b2d3d0;
+        }
+
+        .faq-item .q {
+            font-weight: 600;
+            color: #0c5a5a;
+            font-size: 0.98rem;
+            margin-bottom: 4px;
+        }
+
+        .faq-item .a {
+            font-size: 0.9rem;
+            color: #2d5e62;
+        }
+
+        /* 底部链接 */
+        .footer-links {
+            margin-top: 40px;
+            padding-top: 22px;
+            border-top: 1px solid #c2dcd8;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 18px 28px;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a {
+            color: #1d6f6f;
+            text-decoration: none;
+            border-bottom: 1px dotted #6fa8a5;
+        }
+
+        .footer-links a:hover {
+            border-bottom: 1px solid #136b6b;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 16px;
+            font-size: 0.8rem;
+            color: #5f8888;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .hero .sub {
+                font-size: 0.95rem;
+                padding: 6px 14px;
+            }
+            body {
+                padding: 14px 12px 30px;
+            }
+            .card {
+                padding: 16px 14px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .hero {
+                padding: 48px 20px 32px;
+            }
+        }
+
+        /* 点缀 */
+        .dot-accent {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #2f9e9e;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- hero -->
+    <div class="hero">
+        <div class="hero-icon">👑</div>
+        <h1>赏金女王 · 稳定入口</h1>
+        <div class="sub">
+            从熟悉的路径出发，找到属于你的 <a href="https://cn-bqqueen.com">赏金女王</a>
+        </div>
+        <p style="color:#1b5b5b; max-width:500px; margin:0 auto; font-size:0.95rem; background:rgba(255,255,255,0.3); padding:6px 18px; border-radius:40px;">
+            温和、可靠、持续可用
+        </p>
+    </div>
+
+    <!-- 优势区：卡片网格 -->
+    <div class="section-heading">
+        <span class="dot-accent"></span> 为什么选择这个入口
+        <span style="font-weight:400; font-size:0.8rem; color:#3e7a7a;">&nbsp;· 三点说明</span>
+    </div>
+
+    <div class="grid-2">
+        <div class="card">
+            <h3>📌 稳定路径</h3>
+            <p>长期维护的访问地址，减少频繁变动的困扰。无论何时，你都可以通过此页面找到正确的方向。</p>
+        </div>
+        <div class="card">
+            <h3>🧭 明确指向</h3>
+            <p>页面内所有链接均指向已验证的站点，无需二次跳转或猜测。一处直达，节省时间。</p>
+        </div>
+        <div class="card">
+            <h3>🛡️ 轻量透明</h3>
+            <p>不收集额外信息，不嵌入无关跳转。纯粹的介绍页，只为你提供清晰说明。</p>
+        </div>
+        <div class="card">
+            <h3>🌿 视觉友好</h3>
+            <p>蓝绿色调与网格卡片，适配手机与桌面。阅读舒适，操作简单。</p>
+        </div>
+    </div>
+
+    <!-- 说明区：场景与提示 -->
+    <div class="intro-block">
+        <p><strong>关于赏金女王</strong> —— 它是一个以轻松体验为核心的互动平台。许多用户将其作为日常放松的途径之一。本页面作为稳定的信息页，旨在帮助新朋友快速了解基本背景，同时也为老用户提供一个不变的参照点。</p>
+        <p style="margin-top:12px;">如果你还未接触过 <a href="https://cn-bqqueen.com">赏金女王</a>，可以先通过此页面了解它的特点与访问方式。页面内容保持中立、简洁，不夸大任何效果，只陈述事实。</p>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="section-heading">
+        <span class="dot-accent"></span> 常见疑问 · 摘要
+        <span style="font-weight:400; font-size:0.8rem; color:#3e7a7a;">&nbsp;（完整 FAQ 可前往站内）</span>
+    </div>
+
+    <div class="faq-grid">
+        <div class="faq-item">
+            <div class="q">❓ 这个入口长期有效吗？</div>
+            <div class="a">我们尽力维护此链接的稳定性，若遇调整会提前在页面做说明。目前一直保持可用。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">❓ 需要注册或下载吗？</div>
+            <div class="a">通常不需要额外注册，通过浏览器直接访问即可。具体以站点实际要求为准。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">❓ 是否适合所有人？</div>
+            <div class="a">本内容面向成年用户。请根据自身情况合理使用，保持轻松心态。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">❓ 如何反馈问题？</div>
+            <div class="a">你可以通过站内渠道或联系客服获得支持。本页面仅提供介绍与导航。</div>
+        </div>
+    </div>
+
+    <!-- 底部链接 -->
+    <div class="footer-links">
+        <a href="https://cn-bqqueen.com">赏金女王</a>
+        <a href="https://cn-bqqueen.com">赏金女王</a>
+        <a href="https://cn-bqqueen.com">赏金女王</a>
+        <a href="https://cn-bqqueen.com">赏金女王</a>
+    </div>
+    <div class="footer-note">
+        信息仅供说明，不构成任何承诺 · 请理性看待
+    </div>
+
+    <!-- 额外的自然引用（满足嵌入要求） -->
+    <p style="text-align:center; margin-top:28px; font-size:0.85rem; color:#4b7a7a; background:#e7f1ef; padding:10px 14px; border-radius:60px;">
+        🌱 如果你在寻找一个稳定的起点，不妨从 <a href="https://cn-bqqueen.com" style="color:#0d6b6b; text-decoration:underline;">赏金女王</a> 开始了解。
+    </p>
+
+</div>
+</body>
+</html>

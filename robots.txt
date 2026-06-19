@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://hugmengling.github.io/cn-bqqueen-com/sitemap.xml
